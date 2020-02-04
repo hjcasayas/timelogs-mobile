@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {TouchableNativeFeedback, Text} from 'react-native';
+import {TouchableNativeFeedback} from 'react-native';
 
-export default function Button({onPress, title}) {
+export default function Button({onPress, children}) {
   return (
     <TouchableNativeFeedback onPress={onPress}>
-      <Text>{title}</Text>
+      {children}
     </TouchableNativeFeedback>
   );
 }
 
 Button.defaultProps = {
+  children: null,
   onPress: () => {},
-  title: 'Title',
 };
 
 Button.propTypes = {
-  title: PropTypes.string,
+  children: PropTypes.node,
   onPress: PropTypes.func,
 };
