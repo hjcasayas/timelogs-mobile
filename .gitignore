@@ -60,3 +60,6 @@ buck-out/
 
 #storybook
 /storybook/storyLoader.js
+
+#environment
+.env

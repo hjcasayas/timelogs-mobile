@@ -1,10 +1,14 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import { createAppContainer } from 'react-navigation';
 
-const App = () => (
-  <View>
-    <Text>App works!</Text>
-  </View>
-);
+import RootSwitchNavigator from './navigators/root-switch.navigator';
 
-export default App;
+import { theme } from './shared/theme';
+
+EStyleSheet.build(theme);
+
+const App = createAppContainer(RootSwitchNavigator);
+
+export default () => <App />;
